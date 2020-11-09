@@ -1,3 +1,8 @@
-<p data-controller="dummies">
-  Hello World
-<p>
+<main data-controller="game">
+  <div id="control_panel">
+    <button data-action="game#update">Update</button>
+  </div>
+  <div id="game_screen">
+    <div id="board" data-target="game.board"></div>
+  </div>
+</main>
