@@ -14,9 +14,13 @@ export class GameEngine {
     this.inactive_board = 1 - this.active_board;
   }
 
+  get_active_board() {
+    return this.boards[this.active_board];
+  }
+
   update() {
-    for (let i = 0; i <= rows; i++) {
-      for (let j = 0; j <= cols; j++) {
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.cols; j++) {
         let active_board = this.boards[this.active_board];
         let inactive_board = this.boards[this.inactive_board];
 
@@ -32,6 +36,6 @@ export class GameEngine {
       }
     }
 
-    switch_boards();
+    this.switch_boards();
   }
 }

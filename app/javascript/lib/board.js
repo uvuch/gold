@@ -23,17 +23,17 @@ export class Board {
   }
 
   is_cell_alive(r, c) {
-    this.data[r][c] == 1;
+    return this.data[r][c] == 1;
   }
 
   is_cell_going_to_die(r, c) {
-    let.neighbors = number_of_neighbors(r, c);
-    neighbors < 2 || neighbors > 3;
+    let neighbors = this.number_of_neighbors(r, c);
+    return neighbors < 2 || neighbors > 3;
   }
 
   is_cell_goint_to_reborn(r, c) {
-    let.neighbors = number_of_neighbors(r, c);
-    neighbors > 2;
+    let neighbors = this.number_of_neighbors(r, c);
+    return neighbors > 2;
   }
 
   number_of_neighbors(r, c) {
@@ -45,7 +45,7 @@ export class Board {
 
     for (let i = row_min; i <= row_max; i++) {
       for (let j = col_min; j <= col_max; j++) {
-        if (i == r && j = c) continue; //skipping if we are looking at the testing cell itself
+        if (i == r && j == c) continue; //skipping if we are looking at the testing cell itself
         if (this.data[i][j] == 1) counter++;
       }
     }
